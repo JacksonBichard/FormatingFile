@@ -1,0 +1,13 @@
+import re
+import fileinput
+
+TESTFILE = "TESTFILE.txt"
+f = open('LearnTXT.txt', 'r')
+t = f.read()
+
+no_hyphens = re.sub('-','', t)
+lines = re.split (r'\n+', no_hyphens)
+
+with open(TESTFILE, 'w') as file:
+    for line in lines:
+        file.write("\""+ line + "\"" + "\n")
